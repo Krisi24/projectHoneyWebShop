@@ -1,0 +1,46 @@
+
+@keyframes animText {
+    0% {
+        background: var(--clr1);
+        -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    }
+    100% {
+        background: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes turnUp-dowToUp {
+    from {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -40%);
+        filter: opacity(0);
+    }
+    to {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%) ;
+        filter: opacity(1);
+    }
+}
+
+@keyframes turnUp {
+    from {
+        filter: opacity(0);
+    }
+    to {
+        filter: opacity(1);
+    }
+}
