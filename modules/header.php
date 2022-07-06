@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 
 <?php
+define("DAY_IN_MILSEC", 86400);
+
 $id_active = 'id="active"';
 if (!$page_number) $page_number = 0;
 
 
+session_start();
 // counting visits
 
-$file = fopen("visits.txt", "w");
-session_start();
-$_SESSION['visit_number'] = $_SESSION['visit_number'] + 1;
-$count = $_SESSION['visit_number'];
-fwrite($file,$count);
+$_SESSION['visit_number'] = file_get_contents("user_data/visits.txt");
+$file = fopen("user_data/visits.txt", "w");
+fwrite($file,$_SESSION['visit_number'] + 1);
+fclose($file);
+
+// cookies
+setcookie("user", "user", time() + (DAY_IN_MILSEC * 90));
+if (empty($_COOKIE["user"])) {
+	$visitors_number = file_get_contents("user_data/visitors.txt");
+	$file = fopen("user_data/visitors.txt", "w");
+	fwrite($file, $visitors_number + 1);
+	fclose($file);
+}
+
 ?>
 
 <html lang="hu">

@@ -98,7 +98,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
     .starting-section > nav { height: 80vh; }
-    .starting-section > nav > ul li {float: none; }
+    .starting-section > nav > ul li {float: none; text-align: center; }
     .starting-section > nav > ul a {font-size: 40px; }
     .starting-section > nav > h1 { font-size: 80px; }
 }
