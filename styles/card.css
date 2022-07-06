@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
-    margin: 10em 5em;
+    margin: 3em 5em;
     overflow: visible;
     gap: 8em 10em;
     min-height: 70vh;
@@ -68,9 +68,9 @@
     background: transparent;
     color: var(--clr1);
 }
-.card h1, .card p {  background-color: transparent;}
+.card h1, .card p {  background-color: transparent; text-shadow: 2px 2px 4px var(--clr6);}
 .card h1 {font-size: 24px; transition: .2s linear;} .card p {font-size: 16px; transition: .2s linear;}
-.card:hover h1 {font-size: 24px;} .card:hover p {font-size: 16px;}
+.card:hover h1 {font-size: 24px; } .card:hover p {font-size: 16px;}
 .card:hover h1, .card:hover p {
     color: var(--clr10);
 }

@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 
 <?php
-$mez1_name = "Akác méz";
 $id_active = 'id="active"';
 if (!$page_number) $page_number = 0;
+
+
+// counting visits
+
+$file = fopen("visits.txt", "w");
+session_start();
+$_SESSION['visit_number'] = $_SESSION['visit_number'] + 1;
+$count = $_SESSION['visit_number'];
+fwrite($file,$count);
 ?>
 
 <html lang="hu">
@@ -27,7 +35,7 @@ if (!$page_number) $page_number = 0;
 			<h1><?php echo $_PAGE_NAME; ?></h1>
 			<ul class="nav_links">
 				<li><a href="main.php"	<?php if($page_number == 1) echo $id_active; ?>>Mézeink</a></li>
-				<li><a href="meheszet.php" <?php if($page_number == 2) echo $id_active; ?>>Méhészet</a></li>
+				<li><a href="info.php" <?php if($page_number == 2) echo $id_active; ?>>Információk</a></li>
 			</ul>
 		</nav>
 	</div>

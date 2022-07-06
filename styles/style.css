@@ -20,21 +20,45 @@
 h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, a::selection, li::selection {
     color: var(--clr6); background-color: rgba(255, 255, 255, .4);}
 body {
-    margin: 0; padding: 0;
+    margin: 0; padding: 0;background-color: var(--clr1);
 }
+/* section */
+.info {
+    position: relative;
+    background-color: var(--clr1);
+    margin: 40px 40px;
+}
+.info h1, .info  h2, .info h3, .info h4, .info h5, .info h6, .info p,.info a,.info li { font-size: 24px; color: var(--clr6); text-align: center;}
+.info h1 {font-size: 2.5em;}
+.info .info-list li, .info .info-list p  { 
+    text-align: left;
+}
+.info h1::selection,.info  h2::selection,.info  h3::selection,.info  h4::selection,.info  h5::selection,.info  h6::selection,.info  p::selection,.info  a::selection,.info  li::selection {
+    color: var(--clr10); background-color: var(--clr6);}
+.info .info-list {
+    display: block;
+    position: relative;
+    left: 50%;transform: translateX(-20vw);}
+.info .iframe-border { 
+    display: block;
+    width: min-content;
+    position: relative;
+    left: 50%;transform: translateX(-20vw); border: 3px solid var(--clr6);}
+/* section end*/
 
+/*.starting-section - HEADER - NAVIGATION */
 .starting-section {
     background-image: var(--header-img);
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
     background-attachment: fixed;
     animation: turn_up_bg 1.2s ease-out 0s 1 normal;
 }
 .starting-section > nav {
     position: relative;
     min-height: 840px;
-    height: 98vh;
+    height: 90vh;
     backdrop-filter: blur(0px);
     background-color: rgba(0, 0, 0, .6); 
 }
@@ -66,13 +90,18 @@ body {
     padding: .5em .5em;
     margin: 0 0;
 }
+@media only screen and (max-width: 1000px) { 
+    .starting-section 
+    {background-position: top;
+        background-size: cover;
+        background-repeat: repeat;}
+}
 @media only screen and (max-width: 768px) {
     .starting-section > nav { height: 80vh; }
     .starting-section > nav > ul li {float: none; }
     .starting-section > nav > ul a {font-size: 40px; }
     .starting-section > nav > h1 { font-size: 80px; }
 }
-   
 .starting-section > nav > ul a {
     filter:opacity( 1);
     font-size: 28px;
@@ -87,25 +116,11 @@ body {
 .starting-section > nav > ul li:hover {
     color: var(--clr6);
     border-radius: 4px;
-}/*
-.starting-section > ul li:hover::before{
-    content: "";
-    display: inline-block;
-    z-index: -1;
-    position: absolute; left: -0.25em; top: -8.5em;
-    width: 105%; height: 20em;
-    background: conic-gradient(var(--clr1),transparent) ;
-    animation: spinning 4s linear infinite;}
-.starting-section > ul li:hover::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    inset: 2px;
-    border-radius: 4px;
-    background: var(--clr1);
-}*/
+}
 .starting-section > nav > ul li:hover > a { color: var(--clr6);}
 .starting-section > nav a:active { color: var(--clr4) !important;}
+
+/*.starting-section end*/
 
 footer {
     background-color: var(--clr6);

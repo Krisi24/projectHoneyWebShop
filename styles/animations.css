@@ -1,3 +1,18 @@
+:root {
+    --clr1: #F2F2F2; /*clr 1.*/
+    --clr2: #591F0A;
+    --clr3: #A69576;
+    --clr4: #5C6373;
+    --clr5: #261008;
+    --clr6: #262526; /*clr 2.*/
+    --clr7: #B0C6D9;
+    --clr8: #719ED9;
+    --clr9: #D99518;
+    --clr10: #f19500; /*clr 3.*/
+    --header-img: url('../images/header.jpg');
+    --section-edge-size: 220px;
+    --card-border-radius: 6px;
+}
 
 @keyframes animText {
     0% {
@@ -57,6 +72,9 @@
 @keyframes card_title {
     0% { transform:translateX(30%);}
     50% { transform:translateX(0);  background-color: transparent;}
-    60% { transform:translateX(0);  background-color: white;}
-    100% { transform:translateX(0); background-color: white;border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);}
+    60% { transform:translateX(0);  background-color: var(--clr6);}
+    100% { transform:translateX(0); background-color: var(--clr6);
+        border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+        border: 3px solid var(--clr10);
+    }
 }
