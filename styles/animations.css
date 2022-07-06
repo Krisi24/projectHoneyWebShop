@@ -44,3 +44,19 @@
         filter: opacity(1);
     }
 }
+
+@keyframes turn_up_bg {
+    from {
+        filter: blur(2px);
+    }
+    to {
+        filter: blur(0);
+    }
+}
+
+@keyframes card_title {
+    0% { transform:translateX(30%);}
+    50% { transform:translateX(0);  background-color: transparent;}
+    60% { transform:translateX(0);  background-color: white;}
+    100% { transform:translateX(0); background-color: white;border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);}
+}

@@ -1,4 +1,9 @@
-<?php require_once "modules/header.php"; ?>
+<?php 
+$_PAGE_NAME = "Magyar Termelői Méz"; # így helyesen vagn írva???
+$_TITLE = "Mézeink"; 
+$page_number = 1;
+require_once "modules/header.php";
+?>
 
 	<section class="first-section">
 		<div class="cards">
